@@ -1,0 +1,4 @@
+# item quantite chance(xx,xx)
+dirt 32 50
+stone 32 50
+ULU 1 50

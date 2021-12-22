@@ -45,4 +45,8 @@ public class Reward {
     public String getName() {
         return this.nomItem;
     }
+
+    public String getString() {
+        return (this.nomItem +" "+ this.count +" " + this.chance +"% ");
+    }
 }

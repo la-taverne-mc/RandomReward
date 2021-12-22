@@ -1,5 +1,7 @@
 package fr.lataverne.randomreward;
 
+import org.bukkit.ChatColor;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
@@ -10,9 +12,8 @@ public class RandomBuilder {
     private final HashMap<Integer,Reward> rewardHashMap = new HashMap<>();
     private int indexMax = 0;
 
-    public RandomBuilder() {
+    public RandomBuilder(File myObj) {
         try {
-            File myObj = new File("src\\fr\\lataverne\\randomreward\\filename.txt");
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
@@ -34,13 +35,14 @@ public class RandomBuilder {
         int	indexTotal = 0;
         for (Reward reward : this.rewards){
             indexTotal += (int) (reward.getChance()*100);
+            System.out.println("indexTotal:" + indexTotal + " reward:" + reward.getString());
             rewardHashMap.put(indexTotal,reward);
         }
         this.indexMax = indexTotal;
     }
 
     public static void main(String[] args){
-        RandomBuilder randomBuilder= new RandomBuilder();
+        RandomBuilder randomBuilder= new RandomBuilder(  new File("src\\fr\\lataverne\\randomreward\\filename.txt"));
         randomBuilder.printRewards();
 
         HashMap<String, Integer> stat = new HashMap<>();
@@ -55,7 +57,6 @@ public class RandomBuilder {
                     stat.put(reward.getName(),stat.get(reward.getName())+1);
         }
 
-        System.out.println(stat);
     }
 
     public void printRewards(){
@@ -65,8 +66,8 @@ public class RandomBuilder {
         }
     }
 
-     /**
-     * Retourne
+    /**
+     * returne one random reward
      * @return
      */
     public Reward getRandomReward(){
@@ -89,5 +90,16 @@ public class RandomBuilder {
 
         return rewardHashMap.get(lastIndex);
     }
+
+    public ArrayList<String> getList() {
+        ArrayList<String> strings = new ArrayList<>();
+        for (Integer index : rewardHashMap.keySet()){
+            String string = "index:"+index+" ";
+            string += rewardHashMap.get(index).getString();
+            strings.add(string);
+        }
+        return strings;
+    }
+
 }
 

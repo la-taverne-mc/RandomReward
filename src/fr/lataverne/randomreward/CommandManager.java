@@ -62,7 +62,7 @@ public class CommandManager implements CommandExecutor {
         System.out.println("ir give " + player.getDisplayName() + " " + reward.nomItem);
         String command = reward.isCustomItem
                 ? "ir give " + player.getDisplayName() + " " + reward.nomItem
-                : "give " + player.getDisplayName() + " " + reward.nomItem;
+                : "give " + player.getDisplayName() + " " + reward.nomItem+" "+reward.count;
 
         ConsoleCommandSender console = Bukkit.getServer().getConsoleSender();
         Bukkit.dispatchCommand(console, command);

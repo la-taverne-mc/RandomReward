@@ -21,7 +21,7 @@ public class RandomReward extends JavaPlugin {
         if (!file.exists()) {// saves it to your plugin's data folder if it doesn't exist already
             file.getParentFile().mkdirs();
             try {
-                System.out.println("cration du fichier !! ");
+                System.out.println("creation du fichier !! ");
                 file.createNewFile();
             } catch (IOException ex) {
                 ex.printStackTrace();

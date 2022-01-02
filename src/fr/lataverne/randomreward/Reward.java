@@ -1,21 +1,28 @@
 package fr.lataverne.randomreward;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class Reward {
+    String plugin ;
     String nomItem;
     int count;
     double chance;
     int index;
     boolean isCustomItem = false;
+    ArrayList<String> otherArg = new ArrayList<>();
 
-    public Reward(String word, String word1, String word2) {
-        this.nomItem = word;
-        System.out.println(word1);
-        this.count = Integer.parseInt(word1);
-        this.chance = Double.parseDouble(word2);
-        isCustomItem = isCustomItem(word);
+    public Reward(String[] word) {
+        this.plugin = word[0];
+        this.nomItem = word[1];
+        System.out.println(word[1]);
+        this.count = Integer.parseInt(word[2]);
+        this.chance = Double.parseDouble(word[3]);
+        isCustomItem = (!word[0].toLowerCase().equals("minecraft"));
+        otherArg.addAll(Arrays.asList(word).subList(4, word.length));
     }
 
-    private boolean isCustomItem(String word) {
+    /** private boolean isCustomItem(String word) {
         return (word.equalsIgnoreCase("GoblinPickaxe" ) ||
                 word.equalsIgnoreCase("GiantBoots"    ) ||
                 word.equalsIgnoreCase("UnbreakableHoe") ||
@@ -31,7 +38,7 @@ public class Reward {
                 word.equalsIgnoreCase("MiningPotion"  ) ||
                 word.equalsIgnoreCase("CreeperPotion" ) ||
                 word.equalsIgnoreCase("SwimmingPotion"));
-    }
+    } **/
 
 
     public double getChance() {

@@ -20,7 +20,7 @@ public class RandomBuilder {
                 System.out.println(data);
                 String[] words = data.split(" ");
                 if(!Objects.equals(words[0], "#"))
-                    this.rewards.add(new Reward(words[0],words[1],words[2]));
+                    this.rewards.add(new Reward(words));
             }
             myReader.close();
             this.initialiseIndexs();
@@ -82,7 +82,7 @@ public class RandomBuilder {
 
         int lastIndex = -1;
         for(Object index : keys){
-            System.out.println("indexx:" + index);
+            System.out.println("index:" + index);
             if(indexRandom <= (int) index && lastIndex == -1) {
                 lastIndex = (int) index;
             }

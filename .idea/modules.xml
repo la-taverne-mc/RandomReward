@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/RandomReward.iml" filepath="$PROJECT_DIR$/RandomReward.iml" />
+      <module fileurl="file://$PROJECT_DIR$/minecraftDev/minecraftDev.iml" filepath="$PROJECT_DIR$/minecraftDev/minecraftDev.iml" />
     </modules>
   </component>
 </project>

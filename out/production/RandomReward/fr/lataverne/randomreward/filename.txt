@@ -1,4 +1,0 @@
-# plugin  item quantite chance(xx,xx)
-minecraft dirt 32 50
-minecraft stone 32 50
-itemreward ULU 1 50

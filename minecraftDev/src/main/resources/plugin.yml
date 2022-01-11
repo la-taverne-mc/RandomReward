@@ -1,0 +1,4 @@
+name: RandomReward
+version: '${project.version}'
+main: fr.lataverne.randomreward.RandomReward
+api-version: 1.18
